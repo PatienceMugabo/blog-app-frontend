@@ -8,7 +8,7 @@ const useLogin = () => {
 
   const getUser = async (id) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/users/${id}`);
+      const res = await fetch(`/api/users/${id}`);
       const result = await res.json();
 
       localStorage.setItem("logged-user", JSON.stringify(result));
