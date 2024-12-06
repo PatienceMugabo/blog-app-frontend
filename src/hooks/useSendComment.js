@@ -9,7 +9,7 @@ const useSendComment = () => {
 
     useEffect(() => {
         // Establish WebSocket connection
-        socket = new WebSocket('ws://localhost:8081/ws');
+        socket = new WebSocket(`ws://${process.env.REACT_APP_BACKEND_URL}/ws`);
 
         socket.onopen = () => {
             console.log('Connected to WebSocket');
@@ -41,7 +41,7 @@ const useSendComment = () => {
     const sendComment = async (comment, blogId) => {
         setLoading(true);
         try {
-            const res = await fetch(`/api/comments/${blogId}/newComment`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comments/${blogId}/newComment`, {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ text: comment })

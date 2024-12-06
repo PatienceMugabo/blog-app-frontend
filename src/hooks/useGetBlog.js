@@ -9,7 +9,7 @@ const useGetBlog = () => {
         const fetchBlogs = async() => {
             setLoading(true)
             try {
-                const res = await fetch("/api/blogs/all")
+                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/blogs/all`)
                 const result = await res.json()
 
                 setBlogs(result.blogs)

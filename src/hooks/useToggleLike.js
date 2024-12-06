@@ -7,7 +7,7 @@ const useToggleLike = () => {
     const toggleLike = async(id) => {
         setLoading(true)
         try {
-            const res = await fetch(`/api/blogs/${id}/toggleLike`)
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/blogs/${id}/toggleLike`)
             const result = await res.json()
 
             if(!res.ok) {
