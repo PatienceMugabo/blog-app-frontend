@@ -7,7 +7,7 @@ const useDeleteComment = () => {
     const deleteComment = async(blogId, commentId) => {
         setLoading(true)
         try {
-            const res = await fetch(`/api/comments/delete/${blogId}/${commentId}`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comments/delete/${blogId}/${commentId}`, {
                 method: "DELETE",
                 headers: {'Content-Type': "application/json"}
             })

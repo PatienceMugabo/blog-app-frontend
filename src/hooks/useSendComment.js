@@ -19,7 +19,7 @@ const useSendComment = () => {
         }
         setLoading(true)
         try {
-            const res = await axios.post(`/api/comments/${blogId}/newComment`, { text: comment }, {withCredentials: true})
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/comments/${blogId}/newComment`, { text: comment }, {withCredentials: true})
             
 
             if(res.status !== 200) {
