@@ -11,7 +11,7 @@ function BlogList({ blog }) {
         <>
             <NavLink to={`/blog-post/${joinWithDash(blog.title)}`} onClick={() => setSelectedBlog(blog)} className="card w-80 hover:cursor-pointer md:w-80 shadow-xl dark:border dark:border-slate-800 bg-white text-slate-900 dark:bg-transparent dark:text-white">
                 <figure className="h-48">
-                    <img className="h-48 w-full" src={`http://localhost:8081/uploads/${blog.blogThumbnail}`} alt="Shoes" />
+                    <img className="h-48 w-full" src={`https://blog-web-tech-backend.onrender.com/uploads/${blog.blogThumbnail}`} alt="Shoes" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title capitalize">{shortTitle(blog.title)}</h2>

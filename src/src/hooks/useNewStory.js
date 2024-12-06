@@ -6,6 +6,18 @@ const useNewStory = () => {
     const [loading, setLoading] = useState(false);
 
     const newStory = async ({ title, genre, thumbnail, story }) => {
+        if(!title || !genre || !thumbnail || !story) {
+            toast.error("Fill all fields please")
+            return;
+        }
+        if(story.length < 200) {
+            toast.error("Your story can't be less that 200 characters")
+            return;
+        }
+        if(title.length < 5) {
+            toast.error("Title must not be less than 5 characters")
+            return;
+        }
         setLoading(true);
         try {
             const formData = new FormData();
@@ -14,7 +26,7 @@ const useNewStory = () => {
             formData.append('blogThumbnail', thumbnail);
             formData.append('content', story);
 
-            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/blogs/create`, formData, {
+            const res = await axios.post("/api/blogs/create", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 },

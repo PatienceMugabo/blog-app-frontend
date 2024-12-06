@@ -17,7 +17,7 @@ const useSingleBlog = () => {
                     return;
                 }
 
-                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/blogs/${selectedBlog.id}`);
+                const res = await fetch(`/api/blogs/${selectedBlog.id}`);
                 const result = await res.json();
                 
                 if (!res.ok) {

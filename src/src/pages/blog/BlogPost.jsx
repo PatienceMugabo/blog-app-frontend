@@ -37,7 +37,7 @@ function BlogPost() {
                     : (
                         <>
                             <div className="lg:w-[980px]">
-                                <img className="w-full" src={`http://localhost:8081/uploads/${selectedBlog.blog.blogThumbnail}`} alt="" />
+                                <img className="w-full" src={`https://blog-web-tech-backend.onrender.com/uploads/${selectedBlog.blog.blogThumbnail}`} alt="" />
                             </div>
                             <div className="flex flex-col gap-4 px-7 w-full lg:w-[980px]">
                                 <h1 className="text-3xl font-bold capitalize">{selectedBlog.blog.title}</h1>
@@ -45,7 +45,7 @@ function BlogPost() {
                                     <div className="avatar flex justify-start items-center gap-3">
                                         <div className="w-8 rounded-full">
                                             {(selectedBlog.author && selectedBlog.author.profilePicture)
-                                                ? (<img src={`http://localhost:8081/uploads/${selectedBlog.author.profilePicture}`} alt="Author profile" />)
+                                                ? (<img src={`https://blog-web-tech-backend.onrender.com/uploads/${selectedBlog.author.profilePicture}`} alt="Author profile" />)
                                                 : (<img src="https://avatar.iran.liara.run/public/boy?username=hozayves" />)
                                             }
                                         </div>
